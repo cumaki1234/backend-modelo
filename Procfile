@@ -1,0 +1,1 @@
+web: gunicorn modelo_api.wsgi
