@@ -1,0 +1,72 @@
+{
+  "descripcion": "MLP Regressor — ISP_Final (0–1) → Estado (Bueno/Regular/Malo)",
+  "features": [
+    "Temperatura",
+    "Humedad",
+    "Tipo_Suelo",
+    "Precipitacion",
+    "Altitud",
+    "Tipo_Irrigacion",
+    "pH_Suelo",
+    "Luz_Solar",
+    "Uso_Fertilizantes",
+    "Presencia_Plagas_Enfermedades",
+    "Tipo_Producto",
+    "Mes_Siembra",
+    "Dia_Anio"
+  ],
+  "target": "ISP_Final",
+  "umbrales_estado": {
+    "Bueno": 0.55,
+    "Regular": 0.3,
+    "Malo": 0.0
+  },
+  "encoders_clases": {
+    "Tipo_Producto": [
+      "Cebolla",
+      "Espinaca",
+      "Frijol",
+      "Lechuga",
+      "Maiz",
+      "Papa",
+      "Remolacha",
+      "Tomate",
+      "Trigo",
+      "Zanahoria"
+    ],
+    "Tipo_Suelo": [
+      "Arcilloso",
+      "Arenoso",
+      "Mixto"
+    ],
+    "Tipo_Irrigacion": [
+      "Aspersion",
+      "Goteo",
+      "Gravedad"
+    ],
+    "Uso_Fertilizantes": [
+      "Organicos",
+      "Quimicos"
+    ],
+    "Presencia_Plagas_Enfermedades": [
+      "No",
+      "Si"
+    ]
+  },
+  "arquitectura": {
+    "capas": [
+      128,
+      64,
+      32
+    ],
+    "activacion": "relu",
+    "solver": "adam"
+  },
+  "metricas_test": {
+    "r2": 0.863,
+    "rmse": 0.0626,
+    "mae": 0.0472,
+    "accuracy_clase": 0.863,
+    "epocas": 119
+  }
+}
